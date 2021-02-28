@@ -1,0 +1,147 @@
+@charset "UTF-8";
+body {
+  min-width: 1022px;
+}
+
+.text {
+  font-size: 1.6em;
+  line-height: 1.3125;
+}
+
+.small {
+  font-size: 1.4em;
+  line-height: 1.357;
+}
+
+.contact-btn {
+  width: 155px;
+  height: 37px;
+  color: #fff;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background: -webkit-gradient(linear, left top, right top, from(#fa41cc), to(#6020b0));
+  background: linear-gradient(90deg, #fa41cc, #6020b0);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 3.2em;
+  line-height: 1.34375;
+}
+
+/*************  header    ****************/
+header {
+  height: 94px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+  z-index: 10;
+}
+
+header .header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1022px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 21px;
+}
+
+header .header-inner .header-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header-inner .header-brand img {
+  height: 47px;
+  width: 47px;
+}
+
+header .header-inner .header-brand p {
+  font-size: 2.4em;
+  line-height: 1.333;
+  margin: 0 183px 0 16px;
+}
+
+header .header-inner .header-nav .header-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header-inner .header-nav .header-nav-list .header-nav-item:nth-child(n + 2) {
+  margin-left: 46px;
+}
+
+header .header-inner .contact-btn {
+  margin: 0 0 0 auto;
+}
+
+/************end of header****************/
+/************   top       ****************/
+.top {
+  margin-top: 94px;
+  padding-top: 131px;
+  padding-bottom: 113px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top .top-inner {
+  width: 1002px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top .top-inner .top-content .title {
+  margin-top: 30px;
+  margin-bottom: 53px;
+}
+
+.top .top-inner .top-content .contact-btn {
+  margin-top: 55px;
+}
+
+.top .top-inner .top-image {
+  width: 518px;
+  height: 430px;
+  margin: 0 0 0 auto;
+}
+
+.top::before {
+  content: "";
+  width: 708px;
+  height: 711px;
+  background-image: url("../img/楕円形 1@2x.png");
+  z-index: -10;
+  position: absolute;
+  top: -30px;
+  right: -115px;
+}
+
+/************  end of top ****************/
+/************   top       ****************/
+/************  end of top ****************/
+/************   top       ****************/
+/************  end of top ****************/
+/************   top       ****************/
+/************  end of top ****************/
+/************   top       ****************/
+/************  end of top ****************/
+/*# sourceMappingURL=style.css.map */

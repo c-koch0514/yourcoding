@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  color: #333333;
+  font-weight: 700;
+}
+
+b,
+strong,
+.bold {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  color: #333333;
+  font-weight: 700;
+}
+
+/* デフォルトのボールド指定を解除 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+button:focus {
+  outline: none;
+}
