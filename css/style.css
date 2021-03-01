@@ -3,12 +3,12 @@ body {
   min-width: 1022px;
 }
 
-.text {
+.text, #works .swiper-container .slide-content .slide-title {
   font-size: 1.6em;
   line-height: 1.3125;
 }
 
-.small {
+.small, #works .swiper-container .slide-content .slide-info {
   font-size: 1.4em;
   line-height: 1.357;
 }
@@ -24,9 +24,36 @@ body {
   border-radius: 10px;
 }
 
+.contact-btn a {
+  color: #fff;
+}
+
 .title {
   font-size: 3.2em;
   line-height: 1.34375;
+  text-align: center;
+}
+
+.en-title {
+  color: #3ba6c9;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.sub-title {
+  font-size: 2.8em;
+  line-height: 1.32143;
+  text-align: center;
+}
+
+.inner {
+  width: 1022px;
+  margin: 0 auto;
+}
+
+.read {
+  font-size: 1.6em;
+  line-height: 1.625;
 }
 
 /*************  header    ****************/
@@ -56,7 +83,7 @@ header .header-inner {
   padding-right: 21px;
 }
 
-header .header-inner .header-brand {
+header .header-inner .header-brand a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,12 +92,12 @@ header .header-inner .header-brand {
           align-items: center;
 }
 
-header .header-inner .header-brand img {
+header .header-inner .header-brand a img {
   height: 47px;
   width: 47px;
 }
 
-header .header-inner .header-brand p {
+header .header-inner .header-brand a p {
   font-size: 2.4em;
   line-height: 1.333;
   margin: 0 183px 0 16px;
@@ -112,6 +139,7 @@ header .header-inner .contact-btn {
 .top .top-inner .top-content .title {
   margin-top: 30px;
   margin-bottom: 53px;
+  text-align: left;
 }
 
 .top .top-inner .top-content .contact-btn {
@@ -136,12 +164,420 @@ header .header-inner .contact-btn {
 }
 
 /************  end of top ****************/
-/************   top       ****************/
-/************  end of top ****************/
-/************   top       ****************/
-/************  end of top ****************/
-/************   top       ****************/
-/************  end of top ****************/
-/************   top       ****************/
-/************  end of top ****************/
+/************   feature   ****************/
+#feature {
+  padding: 73px 0 155px 0;
+}
+
+#feature .en-title {
+  margin-bottom: 13px;
+}
+
+#feature .feature:nth-of-type(1) {
+  padding-top: 73px;
+}
+
+#feature .feature:nth-of-type(1) .sub-title {
+  margin-bottom: 50px;
+}
+
+#feature .feature:nth-of-type(1) img {
+  width: 380px;
+  height: 314px;
+}
+
+#feature .feature:nth-of-type(1) .feature-title {
+  margin: 49px 0 48px 0;
+}
+
+#feature .feature:nth-of-type(2) {
+  padding-top: 88px;
+}
+
+#feature .feature:nth-of-type(2) .sub-title {
+  margin-bottom: 60px;
+}
+
+#feature .feature:nth-of-type(2) img {
+  width: 479px;
+  height: 329px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+#feature .feature:nth-of-type(2) .feature-title {
+  margin: 4px 0 43px 0;
+}
+
+#feature .feature:nth-of-type(3) {
+  padding-top: 138px;
+}
+
+#feature .feature:nth-of-type(3) .sub-title {
+  margin-bottom: 63px;
+}
+
+#feature .feature:nth-of-type(3) img {
+  width: 400px;
+  height: 290px;
+}
+
+#feature .feature:nth-of-type(3) .feature-text {
+  margin-right: 117px;
+}
+
+#feature .feature:nth-of-type(3) .feature-text .feature-title {
+  margin: 22px 0 36px 0;
+}
+
+#feature .feature-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#feature .feature-content .feature-title {
+  font-size: 2.4em;
+  line-height: 2;
+}
+
+/************  end of feature ************/
+/************     price    ****************/
+#price {
+  background-color: #eefbfb;
+  padding: 53px 0 72px 0;
+}
+
+#price .price-table {
+  margin: 71px auto 38px auto;
+  width: 926px;
+  height: 410px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border-spacing: 0;
+}
+
+#price .price-table td  {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#price .price-table .price-title {
+  padding-left: 19px;
+}
+
+#price .price-table .price {
+  border-left: 1px solid #e5e5e5;
+  width: 68.7365%;
+  padding-left: 30.5px;
+}
+
+#price .presta {
+  text-align: center;
+  color: #444444;
+}
+
+/************  end of price ***************/
+/************    faq      ****************/
+#faq {
+  padding: 57px 0 86px 0;
+}
+
+#faq #faq-aco {
+  margin: 33px auto 0 auto;
+  width: 907px;
+}
+
+#faq #faq-aco .question,
+#faq #faq-aco .answer {
+  border: 1px solid #e5e5e5;
+  font-size: 1.4em;
+  line-height: 1.625;
+  cursor: pointer;
+}
+
+#faq #faq-aco .question + .answer {
+  border-top: none;
+}
+
+#faq #faq-aco .answer + .question {
+  border-top: none;
+}
+
+#faq #faq-aco .question {
+  text-align: center;
+  padding: 19px 0 20px 0;
+}
+
+#faq #faq-aco .answer {
+  background-color: #f2f2f2;
+  padding: 25px 0 26px 35px;
+  color: #444444;
+}
+
+/************  end of faq ****************/
+/************    blog     ****************/
+#blog {
+  background-color: #eefbfb;
+  padding: 57px 0 91px 0;
+}
+
+#blog .blogs {
+  margin-top: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+
+#blog .blogs .blog {
+  width: 389px;
+  height: 387px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+#blog .blogs .blog img {
+  width: 100%;
+  height: 260px;
+}
+
+#blog .blogs .blog .blog-content {
+  height: 127px;
+  position: relative;
+  padding: 16px 30px 11px 18px;
+}
+
+#blog .blogs .blog .blog-content .blog-title {
+  font-size: 1.8em;
+  line-height: 1.4444;
+}
+
+#blog .blogs .blog .blog-content .text, #blog .blogs .blog .blog-content #works .swiper-container .slide-content .slide-title, #works .swiper-container .slide-content #blog .blogs .blog .blog-content .slide-title {
+  color: #444444;
+  display: block;
+  position: absolute;
+  bottom: 11px;
+  right: 30px;
+}
+
+#blog .blogs .blog:nth-of-type(n + 2) {
+  margin-left: 30px;
+}
+
+#blog .blogs .blog:first-of-type {
+  margin-left: auto;
+}
+
+#blog .blogs .blog:last-of-type {
+  margin-right: auto;
+}
+
+/************ end of blog ****************/
+/************   works      ***************/
+#works {
+  padding: 57px 0 90px 0;
+}
+
+#works .swiper-container {
+  width: 100%;
+  margin-top: 59px;
+}
+
+#works .swiper-container .swiper-slide {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  width: 23.57247%;
+}
+
+#works .swiper-container img {
+  width: 100%;
+  height: 15.37335286vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#works .swiper-container .slide-content {
+  padding: 21px 0 42px 18px;
+}
+
+#works .swiper-container .slide-content .slide-title {
+  margin-bottom: 35px;
+}
+
+/************  end of works **************/
+/************   contact     ****************/
+#contact {
+  padding: 65px 0 70px 0;
+  background: -webkit-gradient(linear, left top, right top, from(#05a5fa), to(#63fbd7));
+  background: linear-gradient(90deg, #05a5fa, #63fbd7);
+}
+
+#contact .title,
+#contact .en-title,
+#contact .contact-text {
+  color: #fff;
+}
+
+#contact .contact-text {
+  text-align: center;
+  margin: 39px 0 48px 0;
+}
+
+#contact #contact-form {
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  width: 908px;
+  margin: 0 auto;
+  padding: 30px 62px 35px 63px;
+}
+
+#contact #contact-form label,
+#contact #contact-form input,
+#contact #contact-form textarea {
+  display: block;
+}
+
+#contact #contact-form input,
+#contact #contact-form textarea {
+  background-color: #eefbfb;
+  padding: 0.5em;
+  font-weight: 400;
+}
+
+#contact #contact-form input {
+  width: 499px;
+  height: 2.6975em;
+  margin-bottom: 19px;
+  margin-top: 35px;
+}
+
+#contact #contact-form .ness {
+  font-size: 0.875em;
+  line-height: 1.357;
+  border-radius: 10px;
+  background-color: #0c449b;
+  color: #fff;
+  padding: 5px 15px;
+}
+
+#contact #contact-form label:first-of-type {
+  position: relative;
+}
+
+#contact #contact-form label:first-of-type .ness {
+  margin-left: 26px;
+}
+
+#contact #contact-form label:first-of-type .ness-text {
+  position: absolute;
+  top: 27px;
+}
+
+#contact #contact-form label:nth-of-type(2) {
+  position: relative;
+}
+
+#contact #contact-form label:nth-of-type(2) .ness {
+  margin-left: 48px;
+}
+
+#contact #contact-form label:nth-of-type(2) .ness-text {
+  position: absolute;
+  top: 27px;
+}
+
+#contact #contact-form label:last-of-type {
+  position: relative;
+}
+
+#contact #contact-form label:last-of-type .ness {
+  margin-left: 32px;
+}
+
+#contact #contact-form label:last-of-type .ness-text {
+  position: absolute;
+  top: 27px;
+}
+
+#contact #contact-form textarea {
+  width: 100%;
+  height: 179px;
+  margin-top: 33px;
+  margin-bottom: 31px;
+  resize: none;
+}
+
+#contact #contact-form .ness-text {
+  color: red;
+}
+
+#contact #contact-form .privacy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+#contact #contact-form .privacy input {
+  margin: 0 10px 0 0;
+  width: 20px;
+  height: 20px;
+}
+
+#contact #contact-form .contact-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+#contact #contact-form .error {
+  font-size: 1.4em;
+  line-height: 1;
+  color: red;
+  position: absolute;
+  left: calc(50% - 70px);
+  bottom: 12px;
+}
+
+/************  end of contact *************/
+/************   footer    ****************/
+footer {
+  background-color: #f8f8f8;
+  padding: 45px 0 50px 0;
+  text-align: center;
+}
+
+footer .footer-title {
+  font-size: 2.4em;
+  line-height: 1.3333;
+  margin-bottom: 24px;
+}
+
+footer .text:last-child, footer #works .swiper-container .slide-content .slide-title:last-child, #works .swiper-container .slide-content footer .slide-title:last-child {
+  display: inline-block;
+  margin-left: 68px;
+}
+
+footer small {
+  font-weight: 400;
+  display: block;
+  margin-top: 54px;
+}
+
+/************  end of footer *************/
 /*# sourceMappingURL=style.css.map */
