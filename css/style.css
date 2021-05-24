@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  min-width: 1022px;
+  width: 100vw;
 }
 
 .text, #works .swiper-container .slide-content .slide-title {
@@ -47,7 +47,7 @@ body {
 }
 
 .inner {
-  width: 1022px;
+  max-width: 1022px;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ body {
 /*************  header    ****************/
 header {
   height: 94px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -76,11 +76,16 @@ header .header-inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 1022px;
+  max-width: 1022px;
   height: 100%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 21px;
+  /****************hamburgerメニューの3本線*********************/
+  /****hamburgerメニューの3本線の設定******/
+  /**************************************/
+  /***************   end of hamburgerメニューの3本線    ******************/
 }
 
 header .header-inner .header-brand a {
@@ -100,21 +105,67 @@ header .header-inner .header-brand a img {
 header .header-inner .header-brand a p {
   font-size: 2.4em;
   line-height: 1.333;
-  margin: 0 183px 0 16px;
+  margin-left: 16px;
 }
 
-header .header-inner .header-nav .header-nav-list {
+header .header-inner #header-nav {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+header .header-inner #header-nav .header-nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .header-inner .header-nav .header-nav-list .header-nav-item:nth-child(n + 2) {
+header .header-inner #header-nav .header-nav-list .header-nav-item:nth-child(n + 2) {
   margin-left: 46px;
 }
 
 header .header-inner .contact-btn {
   margin: 0 0 0 auto;
+}
+
+header .header-inner #burger-btn {
+  display: none;
+  margin: 0 10px 0 auto;
+  z-index: 10;
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+
+header .header-inner #burger-btn .bar {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+header .header-inner #burger-btn .bar-top,
+header .header-inner #burger-btn .bar-mid {
+  margin-bottom: calc((30px - (3px * 3)) / 2);
+}
+
+header .header-inner .scroll .bar-top {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: translateY(calc((30px - 3px) / 2)) rotate(30deg);
+          transform: translateY(calc((30px - 3px) / 2)) rotate(30deg);
+}
+
+header .header-inner .scroll .bar-mid {
+  opacity: 0;
+}
+
+header .header-inner .scroll .bar-bot {
+  -webkit-transform: translateY(calc((-1) * (30px - 3px) / 2)) rotate(-30deg);
+          transform: translateY(calc((-1) * (30px - 3px) / 2)) rotate(-30deg);
 }
 
 /************end of header****************/
@@ -123,14 +174,15 @@ header .header-inner .contact-btn {
   margin-top: 94px;
   padding-top: 131px;
   padding-bottom: 113px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
 
 .top .top-inner {
-  width: 1002px;
+  max-width: 1022px;
+  padding-left: 20px;
   margin: 0 auto;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,26 +199,45 @@ header .header-inner .contact-btn {
 }
 
 .top .top-inner .top-image {
-  width: 518px;
-  height: 430px;
+  max-width: 518px;
+  width: 50.685vw;
+  max-height: 430px;
+  height: 42.075vw;
   margin: 0 0 0 auto;
 }
 
-.top::before {
+.top .top-inner .top-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.top .top-inner::before {
   content: "";
   width: 708px;
   height: 711px;
   background-image: url("../img/楕円形 1@2x.png");
   z-index: -10;
   position: absolute;
-  top: -30px;
-  right: -115px;
+  bottom: -26px;
+  left: 551px;
 }
 
 /************  end of top ****************/
 /************   feature   ****************/
 #feature {
   padding: 73px 0 155px 0;
+}
+
+#feature .inner {
+  padding: 0 20px;
+}
+
+#feature .sp {
+  display: none;
+}
+
+#feature .pc910 {
+  display: block;
 }
 
 #feature .en-title {
@@ -182,8 +253,11 @@ header .header-inner .contact-btn {
 }
 
 #feature .feature:nth-of-type(1) img {
-  width: 380px;
-  height: 314px;
+  width: 37.182vw;
+  height: 30.724vw;
+  max-width: 380px;
+  max-height: 314px;
+  margin-right: 30px;
 }
 
 #feature .feature:nth-of-type(1) .feature-title {
@@ -199,11 +273,14 @@ header .header-inner .contact-btn {
 }
 
 #feature .feature:nth-of-type(2) img {
-  width: 479px;
-  height: 329px;
+  width: 46.87vw;
+  height: 32.192vw;
+  max-width: 479px;
+  max-height: 329px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  margin-left: 30px;
 }
 
 #feature .feature:nth-of-type(2) .feature-title {
@@ -219,8 +296,10 @@ header .header-inner .contact-btn {
 }
 
 #feature .feature:nth-of-type(3) img {
-  width: 400px;
-  height: 290px;
+  width: 39.14vw;
+  height: 28.38vw;
+  max-width: 400px;
+  max-height: 290px;
 }
 
 #feature .feature:nth-of-type(3) .feature-text {
@@ -238,6 +317,9 @@ header .header-inner .contact-btn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #feature .feature-content .feature-title {
@@ -254,7 +336,8 @@ header .header-inner .contact-btn {
 
 #price .price-table {
   margin: 71px auto 38px auto;
-  width: 926px;
+  max-width: 926px;
+  width: 90.6vw;
   height: 410px;
   background-color: #fff;
   -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
@@ -267,7 +350,7 @@ header .header-inner .contact-btn {
 }
 
 #price .price-table .price-title {
-  padding-left: 19px;
+  padding: 0 19px;
 }
 
 #price .price-table .price {
@@ -289,14 +372,15 @@ header .header-inner .contact-btn {
 
 #faq #faq-aco {
   margin: 33px auto 0 auto;
-  width: 907px;
+  max-width: 907px;
+  width: 88.74756vw;
 }
 
 #faq #faq-aco .question,
 #faq #faq-aco .answer {
   border: 1px solid #e5e5e5;
   font-size: 1.4em;
-  line-height: 1.625;
+  line-height: 1.857;
   cursor: pointer;
 }
 
@@ -310,12 +394,12 @@ header .header-inner .contact-btn {
 
 #faq #faq-aco .question {
   text-align: center;
-  padding: 19px 0 20px 0;
+  padding: 19px 10px 20px 10px;
 }
 
 #faq #faq-aco .answer {
   background-color: #f2f2f2;
-  padding: 25px 0 26px 35px;
+  padding: 25px 35px;
   color: #444444;
 }
 
@@ -335,8 +419,8 @@ header .header-inner .contact-btn {
 }
 
 #blog .blogs .blog {
-  width: 389px;
-  height: 387px;
+  max-width: 389px;
+  width: 28.477vw;
   background-color: #fff;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -344,21 +428,19 @@ header .header-inner .contact-btn {
 
 #blog .blogs .blog img {
   width: 100%;
-  height: 260px;
+  height: auto;
 }
 
-#blog .blogs .blog .blog-content {
-  height: 127px;
-  position: relative;
-  padding: 16px 30px 11px 18px;
-}
-
-#blog .blogs .blog .blog-content .blog-title {
+#blog .blogs .blog .blog-title {
   font-size: 1.8em;
   line-height: 1.4444;
+  width: 88%;
+  margin-left: 18px;
+  margin-top: 16px;
+  margin-bottom: 35px;
 }
 
-#blog .blogs .blog .blog-content .text, #blog .blogs .blog .blog-content #works .swiper-container .slide-content .slide-title, #works .swiper-container .slide-content #blog .blogs .blog .blog-content .slide-title {
+#blog .blogs .blog .text, #blog .blogs .blog #works .swiper-container .slide-content .slide-title, #works .swiper-container .slide-content #blog .blogs .blog .slide-title {
   color: #444444;
   display: block;
   position: absolute;
@@ -382,20 +464,23 @@ header .header-inner .contact-btn {
 /************   works      ***************/
 #works {
   padding: 57px 0 90px 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 #works .swiper-container {
-  width: 100%;
+  overflow: hidden;
+  width: 100vw;
   margin-top: 59px;
 }
 
 #works .swiper-container .swiper-slide {
-  overflow: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border: 1px solid #dddddd;
   border-radius: 10px;
   width: 23.57247%;
+  margin: 0 2.05%;
 }
 
 #works .swiper-container img {
@@ -406,7 +491,7 @@ header .header-inner .contact-btn {
 }
 
 #works .swiper-container .slide-content {
-  padding: 21px 0 42px 18px;
+  padding: 21px 16px 42px 18px;
 }
 
 #works .swiper-container .slide-content .slide-title {
@@ -436,7 +521,8 @@ header .header-inner .contact-btn {
   background-color: #fff;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  width: 908px;
+  max-width: 908px;
+  width: 88.8455vw;
   margin: 0 auto;
   padding: 30px 62px 35px 63px;
 }

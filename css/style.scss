@@ -5,7 +5,11 @@
 
 // 共通
 body {
-  min-width: 1022px;
+  // min-width: 1022px;
+  width: 100vw;
+  .wrap {
+    // overflow: hidden;
+  }
 }
 .text {
   @include font(1.6, 1.3125);
@@ -38,7 +42,7 @@ body {
   text-align: center;
 }
 .inner {
-  width: 1022px;
+  max-width: 1022px;
   margin: 0 auto;
 }
 .read {
@@ -48,7 +52,7 @@ body {
 /*************  header    ****************/
 header {
   height: 94px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -59,9 +63,10 @@ header {
   .header-inner {
     display: flex;
     align-items: center;
-    width: 1022px;
+    max-width: 1022px;
     height: 100%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 20px;
     padding-right: 21px;
 
@@ -75,11 +80,14 @@ header {
       }
       p {
         @include font(2.4, 1.333);
-        margin: 0 183px 0 16px;
+        margin-left: 16px;
       }
     }
 
-    .header-nav {
+    #header-nav {
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
       .header-nav-list {
         display: flex;
         .header-nav-item:nth-child(n + 2) {
@@ -91,6 +99,49 @@ header {
     .contact-btn {
       margin: 0 0 0 auto;
     }
+
+    /****************hamburgerメニューの3本線*********************/
+    /****hamburgerメニューの3本線の設定******/
+    $bar-wid: 40px;
+    $bar-hei: 30px;
+    $line-hei: 3px;
+    /**************************************/
+    #burger-btn {
+      display: none;
+      margin: 0 10px 0 auto;
+      z-index: 10;
+      position: relative;
+      width: $bar-wid;
+      height: $bar-hei;
+
+      .bar {
+        display: block;
+        height: $line-hei;
+        width: 100%;
+        background-color: #000;
+        transition: 0.3s;
+        z-index: 10;
+      }
+      .bar-top,
+      .bar-mid {
+        margin-bottom: calc((#{$bar-hei} - (#{$line-hei} * 3)) / 2);
+      }
+    }
+    .scroll {
+      .bar-top {
+        transform-origin: center;
+        transform: translateY(calc((#{$bar-hei} - #{$line-hei}) / 2))
+          rotate(30deg);
+      }
+      .bar-mid {
+        opacity: 0;
+      }
+      .bar-bot {
+        transform: translateY(calc((-1) * (#{$bar-hei} - #{$line-hei}) / 2))
+          rotate(-30deg);
+      }
+    }
+    /***************   end of hamburgerメニューの3本線    ******************/
   }
 }
 /************end of header****************/
@@ -100,11 +151,14 @@ header {
   margin-top: 94px;
   padding-top: 131px;
   padding-bottom: 113px;
-  display: flex;
+  width: 100%;
+  overflow: hidden;
 
   .top-inner {
-    width: 1002px;
+    max-width: 1022px;
+    padding-left: 20px;
     margin: 0 auto;
+    position: relative;
     display: flex;
 
     .top-content {
@@ -120,27 +174,44 @@ header {
     }
 
     .top-image {
-      width: 518px;
-      height: 430px;
+      max-width: 518px;
+      width: 50.685vw;
+      max-height: 430px;
+      height: 42.075vw;
       margin: 0 0 0 auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
-}
-.top::before {
-  content: "";
-  width: 708px;
-  height: 711px;
-  background-image: url("../img/楕円形\ 1@2x.png");
-  z-index: -10;
-  position: absolute;
-  top: -30px;
-  right: -115px;
+  .top-inner::before {
+    content: "";
+    width: 708px;
+    height: 711px;
+    background-image: url("../img/楕円形\ 1@2x.png");
+    z-index: -10;
+    position: absolute;
+    bottom: -26px;
+    left: 551px;
+  }
 }
 /************  end of top ****************/
 
 /************   feature   ****************/
 #feature {
   padding: 73px 0 155px 0;
+
+  .inner{
+    padding: 0 20px;
+  }
+
+  .sp {
+    display: none;
+  }
+  .pc910{
+    display: block;
+  }
 
   .en-title {
     margin-bottom: 13px;
@@ -152,8 +223,11 @@ header {
     }
 
     img {
-      width: 380px;
-      height: 314px;
+      width: 37.182vw;
+      height: 30.724vw;
+      max-width: 380px;
+      max-height: 314px;
+      margin-right: 30px;
     }
     .feature-title {
       margin: 49px 0 48px 0;
@@ -166,9 +240,12 @@ header {
     }
 
     img {
-      width: 479px;
-      height: 329px;
+      width: 46.87vw;
+      height: 32.192vw;
+      max-width: 479px;
+      max-height: 329px;
       order: 2;
+      margin-left: 30px;
     }
     .feature-title {
       margin: 4px 0 43px 0;
@@ -181,8 +258,10 @@ header {
     }
 
     img {
-      width: 400px;
-      height: 290px;
+      width: 39.14vw;
+      height: 28.38vw;
+      max-width: 400px;
+      max-height: 290px;
     }
     .feature-text {
       margin-right: 117px;
@@ -196,6 +275,7 @@ header {
   .feature-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .feature-title {
       @include font(2.4, 2);
     }
@@ -210,7 +290,8 @@ header {
 
   .price-table {
     margin: 71px auto 38px auto;
-    width: 926px;
+    max-width: 926px;
+    width: 90.6vw;
     height: 410px;
     background-color: #fff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
@@ -220,7 +301,7 @@ header {
       border-bottom: 1px solid #e5e5e5;
     }
     .price-title {
-      padding-left: 19px;
+      padding: 0 19px;
     }
     .price {
       border-left: 1px solid #e5e5e5;
@@ -242,12 +323,13 @@ header {
 
   #faq-aco {
     margin: 33px auto 0 auto;
-    width: 907px;
+    max-width: 907px;
+    width: 88.74756vw;
 
     .question,
     .answer {
       border: 1px solid #e5e5e5;
-      @include font(1.4, 1.625);
+      @include font(1.4, 1.857);
       cursor: pointer;
     }
 
@@ -259,11 +341,11 @@ header {
     }
     .question {
       text-align: center;
-      padding: 19px 0 20px 0;
+      padding: 19px 10px 20px 10px;
     }
     .answer {
       background-color: #f2f2f2;
-      padding: 25px 0 26px 35px;
+      padding: 25px 35px;
       color: #444444;
     }
   }
@@ -281,32 +363,30 @@ header {
     width: auto;
 
     .blog {
-      width: 389px;
-      height: 387px;
+      max-width: 389px;
+      width: 28.477vw;
       background-color: #fff;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
       img {
         width: 100%;
-        height: 260px;
+        height: auto;
       }
 
-      .blog-content {
-        height: 127px;
-        position: relative;
-        padding: 16px 30px 11px 18px;
+      .blog-title {
+        @include font(1.8, 1.4444);
+        width: 88%;
+        margin-left: 18px;
+        margin-top: 16px;
+        margin-bottom: 35px;
+      }
 
-        .blog-title {
-          @include font(1.8, 1.4444);
-        }
-
-        .text {
-          color: #444444;
-          display: block;
-          position: absolute;
-          bottom: 11px;
-          right: 30px;
-        }
+      .text {
+        color: #444444;
+        display: block;
+        position: absolute;
+        bottom: 11px;
+        right: 30px;
       }
     }
     .blog:nth-of-type(n + 2) {
@@ -325,19 +405,22 @@ header {
 /************   works      ***************/
 #works {
   padding: 57px 0 90px 0;
+  width: 100%;
+  overflow: hidden;
+
 
   .swiper-container {
-    width: 100%;
+    overflow: hidden;
+    width: 100vw;
     margin-top: 59px;
 
     .swiper-slide {
-      overflow: hidden;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border: 1px solid #dddddd;
       border-radius: 10px;
       width: 23.57247%;
-      // height: 407px;
+      margin: 0 2.05%;
     }
 
     img {
@@ -347,7 +430,7 @@ header {
     }
 
     .slide-content {
-      padding: 21px 0 42px 18px;
+      padding: 21px 16px 42px 18px;
 
       .slide-title {
         @extend .text;
@@ -379,7 +462,8 @@ header {
   #contact-form {
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-    width: 908px;
+    max-width: 908px;
+    width: 88.8455vw;
     margin: 0 auto;
     padding: 30px 62px 35px 63px;
 

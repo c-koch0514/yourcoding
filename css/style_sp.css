@@ -1,0 +1,177 @@
+@media screen and (max-width: 767px) {
+  /************   top       ****************/
+  .top {
+    text-align: center;
+  }
+  .top .top-inner {
+    padding-left: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .top .top-inner .top-content .title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .top .top-inner .top-content .contact-btn {
+    margin-top: 40px;
+  }
+  .top .top-inner .top-image {
+    margin: 40px 0 20px 0;
+    width: 60%;
+    height: auto;
+  }
+  .top .top-inner::before {
+    background-size: cover;
+    width: 100%;
+    height: calc(100% + 225px);
+    background-position: center;
+    bottom: 0;
+    left: 0;
+  }
+  /************  end of top ****************/
+  /************   feature   ****************/
+  #feature {
+    text-align: center;
+  }
+  #feature .feature-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #feature .feature-content .feature-text {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #feature .feature:nth-of-type(1),
+  #feature .feature:nth-of-type(2),
+  #feature .feature:nth-of-type(3) {
+    padding-top: 150px;
+  }
+  #feature .feature:nth-of-type(1) img,
+  #feature .feature:nth-of-type(2) img,
+  #feature .feature:nth-of-type(3) img {
+    width: 80%;
+    height: auto;
+    margin: 0;
+  }
+  #feature .feature:nth-of-type(1) .read,
+  #feature .feature:nth-of-type(1) .feature-title,
+  #feature .feature:nth-of-type(2) .read,
+  #feature .feature:nth-of-type(2) .feature-title,
+  #feature .feature:nth-of-type(3) .read,
+  #feature .feature:nth-of-type(3) .feature-title {
+    margin-top: 50px;
+  }
+  #feature .feature:nth-of-type(1) {
+    padding-top: 50px;
+  }
+  #feature .sp {
+    display: block;
+  }
+  /************  end of feature ************/
+  /************    blog     ****************/
+  #blog .blogs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  #blog .blogs .blog {
+    max-width: none;
+    width: 90%;
+  }
+  #blog .blogs .blog .blog-title {
+    width: 100%;
+    margin: 0;
+    padding: 30px 30px 40px 30px;
+  }
+  #blog .blogs .blog .text {
+    width: 100%;
+    position: static;
+    text-align: right;
+    padding: 0 30px 30px 0;
+  }
+  #blog .blogs .blog:nth-of-type(n + 2),
+  #blog .blogs .blog:first-of-type,
+  #blog .blogs .blog:last-of-type {
+    margin: 0 auto;
+  }
+  #blog .blogs .blog:nth-of-type(n + 2) {
+    margin-top: 40px;
+  }
+  /****************** work *********************/
+  #works .swiper-container .swiper-slide {
+    width: 70%;
+  }
+  #works .swiper-container img {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 703px) {
+  /************   contact     ****************/
+  #contact #contact-form input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /************   contact     ****************/
+  #contact #contact-form {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .read {
+    font-size: 1.4em;
+    line-height: 1.79;
+  }
+  #feature .feature-content .feature-title {
+    font-size: 2em;
+    line-height: 2;
+  }
+  /************   contact     ****************/
+  #contact #contact-form .text {
+    font-size: 1.4em;
+    line-height: 1.3125;
+  }
+  #contact #contact-form input, #contact #contact-form textarea {
+    margin-top: 20px;
+  }
+  /************   footer    ****************/
+  footer {
+    padding: 30px 0 30px 0;
+  }
+  footer .text {
+    display: block;
+  }
+  footer .text:last-child {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  footer small {
+    margin-top: 30px;
+  }
+  /************  end of footer *************/
+}
+
+@media screen and (max-width: 430px) {
+  #feature .sp {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style_sp.css.map */

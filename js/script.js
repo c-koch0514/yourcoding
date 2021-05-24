@@ -1,6 +1,5 @@
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 'auto',
-  spaceBetween: 56,
   loop: true,
 
   autoplay:{
@@ -22,7 +21,6 @@ AOS.init({
   offset: 140,
   delay: 100,
   duration: 500,
-  // easing: 'ease-in',
   once: false,
 
 });
@@ -69,6 +67,11 @@ $(function(){
     }else{
       $('#form-content').prev().find('p').fadeOut();
     }
+    if(check == false){
+      $('.privacy').css('color','red');
+    }else{
+      $('.privacy').css('color','#333333');
+    }
 
     if(name == '' || email == '' ||  content == '' || check == false){
       $('.error').fadeIn();
@@ -79,4 +82,36 @@ $(function(){
 
   });
 
+
+  /*******************          header          **********************/
+  var headerTime = 500;
+  /*******************header-navの出現方法**********************/
+  /*** 2.headerのburger 上下のスライド ***/
+  $('#burger-btn').on('click',function(){
+    if (window.matchMedia("(max-width: 1021px)").matches) {
+      $('#header-nav').slideToggle(headerTime);
+      $(this).toggleClass('scroll');
+    }
+  });
+  /** 遷移したらheaderを閉じる **/
+  $('.header-nav-item a').click(function(){
+    if (window.matchMedia("(max-width: 1021px)").matches) {
+      $('#header-nav').delay(headerTime*1.5).slideToggle(headerTime);
+      setTimeout(function(){
+        $('#burger-btn').toggleClass('scroll');
+      },headerTime*2);
+    }
+  });
+
+  /********  PCサイズの時にheader-navが見えるようにする **************/
+  $(window).on("load resize", function() {
+    // ロードとリサイズ時の処理
+    var win = $(window).width();
+    if(win > 1021){
+      $('#header-nav').show();
+    }else{
+      $('#header-nav').hide();
+    }
+  });
+  /*******************        end of header        *******************/
 });
